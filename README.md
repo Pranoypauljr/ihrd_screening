@@ -27,5 +27,10 @@ Candidate may use framework or web scripting language of their choice
           3(c)UI of the application
 
 # Tasks to be completed
-1.load custom images from a directory and implement communication between python&js files to get corresponding coordinates
+1.load custom images from a directory and implement communication between python&js files to get corresponding coordinates 
 2.store the file inputs in a directory for later processing.
+
+# Testing
+1.install above mentioned tools and frameworks
+2.run app.py and you can see the finished ui of the application
+3.Interaction with app is self explanatory

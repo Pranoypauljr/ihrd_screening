@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Landing page</title>
+<link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+{% endblock %}
+
+{% block body %}
+<center><h1>View Photo-Location</h1></center>
+<div class="img">
+<form action="/" method="POST">
+    <input type="file" id="form" name="image">
+    <input type="submit" value="Submit" id="form">
+</form>
+<table border="3">
+    <tr>
+        <th id="txt">Photo</th>
+        <th id="txt">Location</th>
+    </tr>
+    {% for image in images %}
+    <tr>
+    <td><img id="imgs" src={{image.images}} alt="no image"></td>
+    <td><iframe src={{image.link}} frameborder="1" id="srcs"></iframe></td>
+    </tr>
+    <tr>
+    </tr>
+    <tr><td><p>{{image.images}}</p></td></tr>
+{% endfor %}
+</table>
+</div>
+{% endblock %}

@@ -11,7 +11,9 @@ Project dependencies are as listed in the main branch.
 <br/>
 2.open the link and voila!!
 <br/>
+
 # Steps to reinstate database in instance folder
+
 <br/>
 1.run python -m flask shell(if flask shell command is showing fatal error)
 <br/>

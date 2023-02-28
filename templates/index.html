@@ -8,7 +8,7 @@
 {% block body %}
 <center><h1>View Photo-Location</h1></center>
 <div class="img">
-<form action="/" method="POST">
+<form action="/" method="POST" enctype="multipart/form-data">
     <input type="file" id="form" name="image">
     <input type="submit" value="Submit" id="form">
 </form>
@@ -24,7 +24,6 @@
     </tr>
     <tr>
     </tr>
-    <tr><td><p>{{image.images}}</p></td></tr>
 {% endfor %}
 </table>
 </div>

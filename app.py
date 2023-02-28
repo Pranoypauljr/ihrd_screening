@@ -27,20 +27,22 @@ class img(db.Model):
     def __repr__(self):
         return '<images %r>' % self.images
 
+count = 2
 
 @app.route('/',methods=['POST','GET'])
 def index():
+    global count
     if(request.method=='POST'):
-        f = open(request.form['image'], 'rb')
+        f=request.files['image']
+        print(f)
+        f.save(f.filename) 
+        f = open(f.filename, 'rb')
         file_content = f.read()
-        str_b=(file_content)
-        b=bytearray(file_content)
-        #image_data=request.form['image']
+        str_b=file_content
         lat,long=exif_data(file_content)
-        #ba=bytearr(exif_data)
         src = "https://wiki-map.com/map/?locale=en&lat="+str(lat)+"&lng="+str(long)
-        new_image=img(img_id=1,images=b,latitude=lat,longitude=long,link=src)
-
+        new_image=img(img_id=count,images=str_b,latitude=lat,longitude=long,link=src)
+        count+=1
         db.session.add(new_image)
         db.session.commit()
         return redirect('/') 
@@ -49,12 +51,15 @@ def index():
 
     else:
         images=img.query.all()
-        # for image in images:
+        for image in images:
               #print(type(image.images))
-            #   strs = base64.b64encode(image.images)
-            #   print(type(strs))  
-            #   strs=strs.decode("UTF-8")
-            #   image.images="data:image/jpg;charset=utf-8;base64,"+(strs)
+            
+              strs = str(base64.b64encode(image.images))
+              
+              
+              #print(type(strs))  
+            # strs=strs.decode("UTF-8")
+              image.images="data:image/jpg;base64,"+(strs[2:-1])
         return render_template('index.html',images=images)
 
 def exif_data(exif_data):

@@ -1,0 +1,3 @@
+https://www.geeksforgeeks.org/python-plotting-google-map-using-gmplot-package/
+
+https://medium.com/geekculture/extract-gps-information-from-photos-using-python-79288c58ccd9#:~:text=Get%20GPS%20Info%20from%20Metadata&text=ExifTags%20import%20GPSTAGSprint(GPSTAGS,to%20each%20GPS%20information%20item.

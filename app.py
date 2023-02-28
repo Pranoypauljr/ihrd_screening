@@ -90,13 +90,13 @@ def exif_data(exif_data):
     return(lat,long)
     # print("------")
     # print(long)
-def bytearr(exif_data):
-    # img = Image.open(
-    #     exif_data, mode='rb')
-    img_byte_arr = exif_data.tobytes()
-    # print(img_byte_arr)
-    b = base64.b64encode(img_byte_arr)
-    return(b)
+# def bytearr(exif_data):
+#     # img = Image.open(
+#     #     exif_data, mode='rb')
+#     img_byte_arr = exif_data.tobytes()
+#     # print(img_byte_arr)
+#     b = base64.b64encode(img_byte_arr)
+#     return(b)
 
 
 if __name__== "__main__":

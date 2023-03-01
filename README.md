@@ -34,3 +34,7 @@ Candidate may use framework or web scripting language of their choice
 1.install above mentioned tools and frameworks
 2.run app.py and you can see the finished ui of the application
 3.Interaction with app is self explanatory
+
+# Update(01-03-2023)
+please check better_code branch for the proper solution.
+
